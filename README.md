@@ -6,8 +6,21 @@ a Gulp project for HTML working by PhuPT
 - _css:_ sass, concat, minify, auto prefixer to work in all brower
 - _html:_ include file, pass parameters... like php project
 - _brower:_ auto sync when files changed, no need to reload manually
+- _bower:_ to manage your packages
 
-**Using**
+**PreInstall Packages:**
+- _lodash_
+- _fontawesome_
+- _flexslider_
+- _bootstrap_
+- _jquery_
+- _fancybox_
+
+**Structure:**
+- _source:_ workspace - place to work
+- _dist:_ distribution - place to run
+
+**Using:**
 - Clone this
 - run _npm install_ to download all node modules
 - open command line then go to masterHtml by using _cd_ command

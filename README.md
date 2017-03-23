@@ -1,2 +1,2 @@
 # masterHtml
-by PhuPT
+a Gulp project for HTML working by PhuPT

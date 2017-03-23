@@ -3,9 +3,9 @@ a Gulp project for HTML working by PhuPT
 
 **Supported:**
 - _js:_ concat, hint, minify, convert es6 to es5
-- _css:_ sass, concat, minify, auto prefixer to work in all brower
+- _css:_ sass, concat, minify, auto prefixer to work in all browsers
 - _html:_ include file, pass parameters... like php project
-- _brower:_ auto sync when files changed, no need to reload manually
+- _browser:_ auto sync when files changed, no need to reload manually
 - _bower:_ to manage your packages
 
 **PreInstall Packages:**

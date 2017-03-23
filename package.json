@@ -1,0 +1,22 @@
+{
+  "name": "HTMLProject",
+  "authors": [
+    "HoliGigi"
+  ],
+  "homepage": "holidigi.com",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.0",
+    "browser-sync": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "*",
+    "gulp-cssnano": "*",
+    "gulp-file-include": "*",
+    "gulp-jshint": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "jshint": "*"
+  }
+}

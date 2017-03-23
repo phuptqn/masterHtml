@@ -1,0 +1,14 @@
+{
+  "name": "fancyBox",
+  "homepage": "https://github.com/fancyapps/fancyBox",
+  "version": "3.0.39",
+  "_release": "3.0.39",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.0.39",
+    "commit": "56da3590e74ce2908b0bc95c6e153eb9f3bde990"
+  },
+  "_source": "https://github.com/fancyapps/fancyBox.git",
+  "_target": "*",
+  "_originalSource": "fancyBox"
+}

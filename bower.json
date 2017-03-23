@@ -1,0 +1,15 @@
+{
+  "name": "html-website",
+  "authors": [
+    "HoliDigi"
+  ],
+  "homepage": "hdint.net",
+  "dependencies": {
+    "jquery": "1.12.4",
+    "bootstrap": "*",
+    "font-awesome": "*",
+    "fancyBox": "*",
+    "FlexSlider": "*",
+    "lodash": "*"
+  }
+}

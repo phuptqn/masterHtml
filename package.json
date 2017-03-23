@@ -1,8 +1,10 @@
 {
   "name": "masterHtml",
+  "description": "Master Gulp HTML",
   "authors": [
     "Phu Phan Thanh <phuptqn@gmail.com>"
   ],
+  "version": "1.0.0",
   "homepage": "www.phupt.com",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.0",

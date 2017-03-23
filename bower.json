@@ -1,9 +1,11 @@
 {
-  "name": "html-website",
+  "name": "masterHtml",
+  "description": "Master Gulp HTML",
   "authors": [
-    "HoliDigi"
+    "Phu Phan Thanh <phuptqn@gmail.com>"
   ],
-  "homepage": "hdint.net",
+  "version": "1.0.0",
+  "homepage": "www.phupt.com",
   "dependencies": {
     "jquery": "1.12.4",
     "bootstrap": "*",

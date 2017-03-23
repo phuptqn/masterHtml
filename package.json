@@ -1,9 +1,9 @@
 {
-  "name": "HTMLProject",
+  "name": "masterHtml",
   "authors": [
-    "HoliGigi"
+    "Phu Phan Thanh <phuptqn@gmail.com>"
   ],
-  "homepage": "holidigi.com",
+  "homepage": "www.phupt.com",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.0",
     "browser-sync": "*",

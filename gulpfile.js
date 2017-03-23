@@ -9,6 +9,7 @@ var gulp 			= require('gulp'),
 	jshint 			= require('gulp-jshint'),
 	cssnano 		= require('gulp-cssnano'),
 	rename 			= require('gulp-rename'),
+	babel 			= require('gulp-babel'),
 	browserSync 	= require('browser-sync').create();
 
 var paths = {
@@ -42,11 +43,20 @@ gulp.task('sass', function () {
 		.pipe(browserSync.stream());
 });
 
+gulp.task('babeljs', function () {
+	return gulp.src( paths.js + '/*.js' )
+		.pipe(babel({
+			presets: ['es2015']
+		}))
+		.pipe(gulp.dest( paths.js + '/dist' ));
+});
+
 gulp.task('js', function () {
 	return gulp.src([
 			paths.vendor + '/fancyBox/dist/jquery.fancybox.js',
 			paths.vendor + '/FlexSlider/jquery.flexslider.js',
-			paths.js + '/*.js'
+			paths.vendor + '/lodash/dist/lodash.js',
+			paths.js + '/dist/*.js'
 		])
 		.pipe(concat('script.js'))
 		.pipe(gulp.dest(paths.bundles))
@@ -66,16 +76,18 @@ gulp.task('htmlinclude', function() {
 
 gulp.task('jshint', function () {
 	return gulp.src(paths.js + '/*.js')
-		.pipe(jshint())
+		.pipe(jshint({
+			esversion: 6
+		}))
 		.pipe(jshint.reporter('default'))
 });
 
-gulp.task('jsreload', ['jshint', 'js'], function (done) {
+gulp.task('jsreload', ['jshint', 'babeljs', 'js'], function (done) {
 	browserSync.reload();
 	done();
 });
 
-gulp.task('default', ['htmlinclude', 'jshint', 'js', 'sass'], function() {
+gulp.task('default', ['htmlinclude', 'jshint', 'babeljs', 'js', 'sass'], function() {
 
 	browserSync.init({
 		server: "./dist"

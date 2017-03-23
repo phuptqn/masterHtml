@@ -48,7 +48,7 @@ gulp.task('babeljs', function () {
 		.pipe(babel({
 			presets: ['es2015']
 		}))
-		.pipe(gulp.dest( paths.js + '/dist' ));
+		.pipe(gulp.dest( paths.js + '/babeljs' ));
 });
 
 gulp.task('js', function () {
@@ -56,7 +56,7 @@ gulp.task('js', function () {
 			paths.vendor + '/fancyBox/dist/jquery.fancybox.js',
 			paths.vendor + '/FlexSlider/jquery.flexslider.js',
 			paths.vendor + '/lodash/dist/lodash.js',
-			paths.js + '/dist/*.js'
+			paths.js + '/babeljs/*.js'
 		])
 		.pipe(concat('script.js'))
 		.pipe(gulp.dest(paths.bundles))

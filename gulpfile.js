@@ -20,6 +20,7 @@ var paths = {
 	min		: './dist/assets/min',
 	views	: './source/views',
 	js 		: './source/js',
+	temp 	: './source/temp',
 	scss	: './source/scss'
 }
 
@@ -48,7 +49,7 @@ gulp.task('babeljs', function () {
 		.pipe(babel({
 			presets: ['es2015']
 		}))
-		.pipe(gulp.dest( paths.js + '/babeljs' ));
+		.pipe(gulp.dest( paths.temp + '/babeljs' ));
 });
 
 gulp.task('js', function () {
@@ -56,7 +57,7 @@ gulp.task('js', function () {
 			paths.vendor + '/fancyBox/dist/jquery.fancybox.js',
 			paths.vendor + '/FlexSlider/jquery.flexslider.js',
 			paths.vendor + '/lodash/dist/lodash.js',
-			paths.js + '/babeljs/*.js'
+			paths.temp + '/babeljs/*.js'
 		])
 		.pipe(concat('script.js'))
 		.pipe(gulp.dest(paths.bundles))
@@ -66,7 +67,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('htmlinclude', function() {
-	gulp.src([paths.views + '/pages/*.html'])
+	gulp.src([paths.views + '/*.html'])
 		.pipe(fileinclude({
 			prefix: '@@',
 			basepath: '@file'
@@ -102,8 +103,8 @@ gulp.task('default', ['htmlinclude', 'jshint', 'babeljs', 'js', 'sass'], functio
 	gulp.watch([paths.js + '/*.js'], {cwd: './'}, ['jsreload']);
 
 	gulp.watch([
-		paths.views + '/pages/*.html',
-		paths.views + '/partials/*.html'
+		paths.views + '/*/*.html',
+		paths.views + '/*.html'
 	], {cwd: './'}, ['htmlinclude']);
 
 	gulp.watch(paths.dist + '/*.html').on('change', browserSync.reload);

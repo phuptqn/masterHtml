@@ -22391,12 +22391,3 @@
     root._ = _;
   }
 }.call(this));
-
-"use strict";
-
-(function ($) {
-
-	$(function () {});
-
-	$(window).load(function () {});
-})(jQuery);

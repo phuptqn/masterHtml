@@ -32,7 +32,11 @@ gulp.task('sass', function () {
 	  		paths.vendor + '/FlexSlider/flexslider.css',
 			paths.scss + '/*.scss'
 		])
-		.pipe(sass())
+		.pipe(sass({
+			outputStyle: 'expanded',
+			indentType: 'tab',
+			indentWidth: 1
+		}))
 		.pipe(autoprefixer({
 			browsers: ['last 5 versions']
 		}))

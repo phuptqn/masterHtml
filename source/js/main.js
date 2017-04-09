@@ -1,10 +1,10 @@
-($ => {
+(function($) {
 
-	$(() => {
+	$(function() {
 
 	});
 
-	$(window).load(() => {
+	$(window).load(function() {
 
 	});
 

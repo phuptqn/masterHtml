@@ -50,9 +50,7 @@ gulp.task('sass', function () {
 
 gulp.task('babeljs', function () {
 	return gulp.src( paths.js + '/*.js' )
-		.pipe(babel({
-			presets: ['es2015']
-		}))
+		.pipe(babel())
 		.pipe(gulp.dest( paths.temp + '/babeljs' ));
 });
 

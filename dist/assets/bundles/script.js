@@ -22391,3 +22391,10 @@
     root._ = _;
   }
 }.call(this));
+
+(function ($) {
+
+	$(function () {});
+
+	$(window).load(function () {});
+})(jQuery);

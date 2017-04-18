@@ -24,12 +24,22 @@ var paths = {
 	scss	: './source/scss'
 }
 
-gulp.task('sass', function () {
+gulp.task('vendor_css', function () {
 	return gulp.src([
 			paths.vendor + '/bootstrap/dist/css/bootstrap.css',
-	  		paths.vendor + '/font-awesome/css/font-awesome.css',
-	  		paths.vendor + '/fancyBox/dist/jquery.fancybox.css',
-	  		paths.vendor + '/FlexSlider/flexslider.css',
+			paths.vendor + '/font-awesome/css/font-awesome.css',
+			paths.vendor + '/fancyBox/dist/jquery.fancybox.css',
+			paths.vendor + '/FlexSlider/flexslider.css'
+		])
+		.pipe(concat('vendor.css'))
+		.pipe(gulp.dest(paths.bundles))
+		.pipe(rename('vendor.min.css'))
+		.pipe(cssnano({zindex: false}))
+		.pipe(gulp.dest(paths.min));
+});
+
+gulp.task('sass', function () {
+	return gulp.src([
 			paths.scss + '/*.scss'
 		])
 		.pipe(sass({
@@ -54,11 +64,22 @@ gulp.task('babeljs', function () {
 		.pipe(gulp.dest( paths.temp + '/babeljs' ));
 });
 
-gulp.task('js', function () {
+gulp.task('vendor_js', function () {
 	return gulp.src([
 			paths.vendor + '/fancyBox/dist/jquery.fancybox.js',
 			paths.vendor + '/FlexSlider/jquery.flexslider.js',
 			paths.vendor + '/lodash/dist/lodash.js',
+			paths.vendor + '/bootstrap/dist/js/bootstrap.js',
+		])
+		.pipe(concat('vendor.js'))
+		.pipe(gulp.dest(paths.bundles))
+		.pipe(rename('vendor.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest(paths.min));
+});
+
+gulp.task('js', function () {
+	return gulp.src([
 			paths.temp + '/babeljs/*.js'
 		])
 		.pipe(concat('script.js'))
@@ -90,7 +111,7 @@ gulp.task('jsreload', ['jshint', 'babeljs', 'js'], function (done) {
 	done();
 });
 
-gulp.task('default', ['htmlinclude', 'jshint', 'babeljs', 'js', 'sass'], function() {
+gulp.task('default', ['vendor_js', 'vendor_css', 'htmlinclude', 'jshint', 'babeljs', 'js', 'sass'], function() {
 
 	browserSync.init({
 		server: "./dist"

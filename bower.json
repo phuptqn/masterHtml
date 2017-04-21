@@ -8,10 +8,10 @@
   "homepage": "www.phupt.com",
   "dependencies": {
     "jquery": "1.12.4",
-    "bootstrap": "*",
-    "font-awesome": "*",
-    "fancyBox": "*",
-    "FlexSlider": "*",
-    "lodash": "*"
+    "fancybox": "^2.1.5",
+    "lodash": "^4.17.4",
+    "flexslider": "FlexSlider#^2.6.3",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
   }
 }

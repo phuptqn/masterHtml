@@ -28,8 +28,8 @@ gulp.task('vendor_css', function () {
 	return gulp.src([
 			paths.vendor + '/bootstrap/dist/css/bootstrap.css',
 			paths.vendor + '/font-awesome/css/font-awesome.css',
-			paths.vendor + '/fancyBox/dist/jquery.fancybox.css',
-			paths.vendor + '/FlexSlider/flexslider.css'
+			paths.vendor + '/fancybox/source/jquery.fancybox.css',
+			paths.vendor + '/flexslider/flexslider.css'
 		])
 		.pipe(concat('vendor.css'))
 		.pipe(gulp.dest(paths.bundles))
@@ -66,10 +66,10 @@ gulp.task('babeljs', function () {
 
 gulp.task('vendor_js', function () {
 	return gulp.src([
-			paths.vendor + '/fancyBox/dist/jquery.fancybox.js',
-			paths.vendor + '/FlexSlider/jquery.flexslider.js',
+			paths.vendor + '/fancybox/source/jquery.fancybox.js',
+			paths.vendor + '/flexslider/jquery.flexslider.js',
 			paths.vendor + '/lodash/dist/lodash.js',
-			paths.vendor + '/bootstrap/dist/js/bootstrap.js',
+			paths.vendor + '/bootstrap/dist/js/bootstrap.js'
 		])
 		.pipe(concat('vendor.js'))
 		.pipe(gulp.dest(paths.bundles))

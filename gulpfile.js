@@ -48,7 +48,7 @@ gulp.task('sass', function () {
 			indentWidth: 1
 		}))
 		.pipe(autoprefixer({
-			browsers: ['last 5 versions']
+			browsers: ['last 10 versions']
 		}))
 		.pipe(concat('style.css'))
 		.pipe(gulp.dest(paths.bundles))

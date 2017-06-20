@@ -10,6 +10,7 @@ var gulp 			= require('gulp'),
 	cssnano 		= require('gulp-cssnano'),
 	rename 			= require('gulp-rename'),
 	babel 			= require('gulp-babel'),
+	wait 			= require('gulp-wait'),
 	browserSync 	= require('browser-sync').create();
 
 var paths = {
@@ -42,6 +43,7 @@ gulp.task('sass', function () {
 	return gulp.src([
 			paths.scss + '/*.scss'
 		])
+		.pipe(wait(1000))
 		.pipe(sass({
 			outputStyle: 'expanded',
 			indentType: 'tab',

@@ -1,7 +1,7 @@
 (function($) {
 
 	$(function() {
-
+       
 	});
 
 	$(window).load(function() {

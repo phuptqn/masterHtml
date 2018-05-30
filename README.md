@@ -6,18 +6,16 @@ a Gulp project for HTML working by PhuPT
 - _css:_ sass, concat, minify, auto prefixer to work in all browsers
 - _html:_ include file, pass parameters... like php project
 - _browser:_ auto sync when files changed, no need to reload manually
-- _bower:_ to manage your packages
 
 **PreInstall Packages:**
-- _lodash_
 - _fontawesome_
-- _flexslider_
+- _slick slider_
 - _bootstrap_
 - _jquery_
 - _fancybox_
 
 **Structure:**
-- _source:_ workspace - place to work
+- _src:_ workspace - place to work
 - _dist:_ distribution - place to run
 
 **Using:**

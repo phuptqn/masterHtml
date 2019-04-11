@@ -156,5 +156,6 @@ var main = function() {
 
 };
 
+gulp.task('build', tasks);
 gulp.task('default', tasks, main);
 gulp.task('watch', tasks, main);

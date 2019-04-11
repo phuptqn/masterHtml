@@ -1,5 +1,9 @@
+html {
+  font-size: 16px;
+}
+
 body {
-  line-height: 1.25;
+  margin: 0;
 }
 
 p:last-of-type, ul:last-of-type, ol:last-of-type, h2:last-of-type, h3:last-of-type, h4:last-of-type, h5:last-of-type, h6:last-of-type {
@@ -8,6 +12,76 @@ p:last-of-type, ul:last-of-type, ol:last-of-type, h2:last-of-type, h3:last-of-ty
 
 iframe, img {
   max-width: 100%;
+}
+
+a {
+  color: inherit;
+  transition: 0.4s;
+}
+
+button, input, textarea, select {
+  outline: none;
+  font: inherit;
+  color: inherit;
+}
+
+button, [type="button"], [type="submit"] {
+  transition: 0.4s;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+strong, .bold {
+  font-weight: 700;
+}
+
+.black {
+  font-weight: 800;
+}
+
+em, .italic {
+  font-style: italic;
+}
+
+.flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.flex-center {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-center-horizon {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-center-vertical {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .clearfix {

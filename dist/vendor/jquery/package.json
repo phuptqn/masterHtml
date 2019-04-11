@@ -16,7 +16,6 @@
     "fetchSpec": "1.12.4"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/jquery/-/jquery-1.12.4.tgz",

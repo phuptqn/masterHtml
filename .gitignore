@@ -3,3 +3,6 @@ node_modules.windows
 node_modules.mac
 npm-debug.log
 .DS_Store
+package.json
+dist/min
+dist/bundles

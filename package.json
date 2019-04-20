@@ -1,11 +1,11 @@
 {
-  "name": "masterHtml",
+  "name": "master-html",
   "description": "Master Gulp HTML",
   "authors": [
     "Phu Phan Thanh <phuptqn@gmail.com>"
   ],
   "version": "1.0.0",
-  "homepage": "phú.com",
+  "homepage": "https://phú.com",
   "scripts": {
     "start": "gulp"
   },

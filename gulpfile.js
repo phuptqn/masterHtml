@@ -130,7 +130,8 @@ var main = function() {
 
 	// Run server
 	browserSync.init({
-		server: "./dist"
+		server: './dist',
+		open: false
 	});
 
 	// Run registerd tasks

@@ -38,7 +38,7 @@ gulp.task( 'copy_assets', function() {
     .pipe(gulp.dest(paths.fonts));
 });
 
-gulp.task('vendor_css', function () {
+gulp.task('vendor_css', function() {
 	return gulp.src([
 			paths.node + '/bootstrap/dist/css/bootstrap.css',
 			paths.node + '/font-awesome/css/font-awesome.css',
@@ -52,7 +52,7 @@ gulp.task('vendor_css', function () {
 		.pipe(gulp.dest(paths.min));
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', function() {
 	return gulp.src([
 			paths.scss + '/*.scss'
 		])
@@ -72,7 +72,7 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest(paths.min));
 });
 
-gulp.task('vendor_js', function () {
+gulp.task('vendor_js', function() {
 	return gulp.src([
 			paths.node + '/popper.js/dist/umd/popper.js',
 			paths.node + '/bootstrap/dist/js/bootstrap.js',
@@ -86,7 +86,7 @@ gulp.task('vendor_js', function () {
 		.pipe(gulp.dest(paths.min));
 });
 
-gulp.task('jshint', function () {
+gulp.task('jshint', function() {
 	return gulp.src(paths.js + '/*.js')
 		.pipe(jshint({
 			esversion: 6
@@ -94,13 +94,17 @@ gulp.task('jshint', function () {
 		.pipe(jshint.reporter('default'));
 });
 
-gulp.task('babeljs', ['jshint'], function () {
+gulp.task('babeljs', ['jshint'], function() {
 	return gulp.src( paths.js + '/*.js' )
 		.pipe(babel())
+		.on('error', function(err) {
+      console.log(err.stack);
+      this.emit('end');
+    })
 		.pipe(gulp.dest( paths.temp + '/babeljs' ));
 });
 
-gulp.task('js', ['babeljs'], function () {
+gulp.task('js', ['babeljs'], function() {
 	return gulp.src([
 			paths.temp + '/babeljs/*.js'
 		])

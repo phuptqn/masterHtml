@@ -141,7 +141,7 @@ var main = function() {
 
 	// Run registerd tasks
 	watch([
-    paths.views + '/**/*.html',
+    paths.views + '/**/*.html'
   ], function() {
     gulp.start('htmlinclude');
   });
@@ -153,14 +153,14 @@ var main = function() {
   });
 
 	watch([
-    paths.scss + '/**/*.scss',
+    paths.scss + '/**/*.scss'
   ], function() {
     gulp.start('sass');
   });
 
 	// Hot reload
 	watch([
-    paths.dist + '/**/*',
+    paths.dist + '/**/*'
   ], browserSync.reload);
 
 };

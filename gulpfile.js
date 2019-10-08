@@ -9,6 +9,7 @@ var gulp 				= require('gulp'),
 	rename 				= require('gulp-rename'),
 	babel 				= require('gulp-babel'),
 	wait 					= require('gulp-wait'),
+	watch 				= require('gulp-watch'),
 	browserSync 	= require('browser-sync').create();
 
 var paths = {
@@ -139,25 +140,28 @@ var main = function() {
 	});
 
 	// Run registerd tasks
-	gulp.watch([
-		paths.views + '/*.html',
-		paths.views + '/*/*.html',
-		paths.views + '/*/*/*.html'
-	], {cwd: './'}, ['htmlinclude']);
+	watch([
+    paths.views + '/**/*.html',
+  ], function() {
+    gulp.start('htmlinclude');
+  });
 
-	gulp.watch([paths.js + '/*.js'], {cwd: './'}, ['js']);
+	watch([
+    paths.js + '/**/*.js'
+  ], function() {
+    gulp.start('js');
+  });
 
-	gulp.watch([
-		paths.scss + '/*.scss',
-		paths.scss + '/*/*.scss',
-		paths.scss + '/*/*/*.scss'
-	], {cwd: './'}, ['sass']);
+	watch([
+    paths.scss + '/**/*.scss',
+  ], function() {
+    gulp.start('sass');
+  });
 
 	// Hot reload
-	gulp.watch([
-		paths.dist + '/*.html',
-		paths.bundles + '/*.{js,css}'
-	]).on('change', browserSync.reload);
+	watch([
+    paths.dist + '/**/*',
+  ], browserSync.reload);
 
 };
 

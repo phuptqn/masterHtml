@@ -7,3 +7,4 @@ package.json
 dist/min
 dist/bundles
 src/temp
+package-lock.json

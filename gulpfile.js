@@ -31,8 +31,7 @@ var paths = {
 };
 
 gulp.task( 'copy_assets', function() {
-
-	gulp.src( paths.node + '/jquery/**/*' )
+	gulp.src( paths.node + '/jquery/dist/jquery.min.js' )
     .pipe(gulp.dest(paths.vendor + '/jquery'));
 
   return gulp.src( paths.node + '/font-awesome/fonts/*.{ttf,woff,woff2,eot,svg}' )

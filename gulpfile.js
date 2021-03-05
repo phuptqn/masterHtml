@@ -116,7 +116,7 @@ gulp.task('js', ['babeljs'], function() {
 });
 
 gulp.task('htmlinclude', function() {
-	gulp.src([paths.views + '/*.html'])
+	return gulp.src([paths.views + '/*.html'])
 		.pipe(fileinclude({
 			prefix: '@@',
 			basepath: '@file'
